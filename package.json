@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-tutorial",
+  "version": "1.0.0",
+  "description": "Readme",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelcasanova/nodejs-tutorial.git"
+  },
+  "author": "Manuel Casanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuelcasanova/nodejs-tutorial/issues"
+  },
+  "homepage": "https://github.com/manuelcasanova/nodejs-tutorial#readme",
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
