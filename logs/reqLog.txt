@@ -97,3 +97,10 @@
 20220914	14:18:27	8de597e3-62fe-4e2b-be67-2291b0637b0a	PUT	undefined	/employees
 20220914	14:19:24	21d107d3-57f3-46a0-b97a-21eee09e6219	DELETE	undefined	/employees
 20220914	14:19:45	8fb4f6bb-8c38-45d6-bc12-d5e97e53852a	GET	undefined	/employees/1
+20220914	16:04:07	94d4ad1a-d024-44b5-b301-d37f2f331061	GET	undefined	/
+20220914	16:04:07	045bd9a2-b1f4-4103-b971-6a6e09226429	GET	undefined	/css/style.css
+20220914	16:04:37	41eb5281-a7c1-47c8-ba1f-75e4b96749b2	GET	undefined	/employees
+20220914	16:04:56	0b2794f2-d129-487a-855c-7dbcdd5a7e53	POST	undefined	/employees
+20220914	16:05:20	f0bee960-13f2-4906-8dba-ba0f515f67c5	PUT	undefined	/employees
+20220914	16:05:34	79c5f104-6fa8-4777-b3d1-9c5629557b1f	DELETE	undefined	/employees
+20220914	16:05:45	63df9020-1aec-489e-a053-9399b684767b	GET	undefined	/employees/1

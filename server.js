@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const corsOptions = require('./config/corsOptions')
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const { callbackify } = require('util');
@@ -10,24 +11,6 @@ const PORT = process.env.PORT || 3500;
 //Custom middleware (logger)
 app.use(logger);
 
-//Apply cors ASAP but after the logger
-const whitelist = [
-  //Remove unnecessary after development
-  'https://www.yourdomain.com',
-  'https://127.0.0.1:5500',
-  'https://localhost:3500',
-]
-const corsOptions = {
-  origin: (origin, callback) => {
-    //|| !origin remove after development
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  },
-  optionsSuccessStatus: 200
-}
 app.use(cors(corsOptions));
 
 //Built-in middleware to handle urlencoded data
@@ -38,11 +21,9 @@ app.use(express.json());
 
 //serve static files
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/subdir', express.static(path.join(__dirname, '/public')));
 
 //routes
 app.use('/', require('./routes/root'));
-app.use('/subdir', require('./routes/subdir'));
 app.use('/employees', require('./routes/api/employees'));
 
 //catch all
