@@ -46,6 +46,7 @@ app.use('/logout', require('./routes/logout'));
 //Everything after this line will use the verifyJWT. So any route we don't want, should go above.
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
+app.use('/users', require('./routes/api/users'));
 
 //catch all
 app.all('*', (req, res) => {
