@@ -4,3 +4,4 @@
 20220914	13:26:48	5cb5cb23-c6c0-48f9-b8a8-86eb437be0a9	Error: Not allowed by CORS
 20220914	13:56:37	e27ff0fe-2d9b-4add-a516-be1060d7e633	Error: ENOENT: no such file or directory, stat '/Users/manuelcasanova/Documents/my_projects/nodejs-tutorial/views/subdir/test.html'
 20220914	13:56:54	3b86d03e-1473-46e3-a500-0012a6a4163a	Error: ENOENT: no such file or directory, stat '/Users/manuelcasanova/Documents/my_projects/nodejs-tutorial/views/subdir/test.html'
+20220914	17:48:48	6c5aae4f-eead-4d1a-9e08-52a6b1b2f7b8	TypeError: res.sentStatus is not a function
