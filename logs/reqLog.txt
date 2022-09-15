@@ -156,3 +156,5 @@
 20220915	09:15:03	a52859ee-6d4f-4edd-b196-3620babd8f3b	DELETE	undefined	/employees
 20220915	09:15:17	d14af4ca-34eb-45d6-acd5-65e2cab0aeb9	DELETE	undefined	/employees
 20220915	09:16:43	ff3fe12e-25ca-4e10-bcad-c59197889ed2	POST	undefined	/register
+20220915	10:19:56	d8f0fded-f0a0-45f3-9a5b-6a35a9ef7161	POST	undefined	/register
+20220915	10:20:51	a3b9b5eb-9ca8-46d3-9ea2-c427d99ec692	POST	undefined	/register
