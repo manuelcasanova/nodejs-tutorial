@@ -6,7 +6,7 @@ const usersDB = {
 const bcrypt = require('bcrypt');
 
 const jwt = require('jsonwebtoken');
-require ('dotenv').config();
+require('dotenv').config();
 const fsPromises = require('fs').promises;
 const path = require('path');
 
@@ -20,16 +20,23 @@ const handleLogin = async (req, res) => {
   //If founduser, evaluate password
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
+    //Grab the roles
+    const roles = Object.values(foundUser.roles)
     //Create JWTs Token. To send to use with the other routes that we want protected in our API.
     const accessToken = jwt.sign(
-      { "username": foundUser.username },
+      {
+        "UserInfo": {
+          "username": foundUser.username,
+          "roles": roles
+        }
+      },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '30s'} //In production, a few minutes.
+      { expiresIn: '30s' } //In production, a few minutes.
     );
     const refreshToken = jwt.sign(
       { "username": foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '1d' } 
+      { expiresIn: '1d' }
     );
     //Save refreshToken with current user
     const otherUsers = usersDB.users.filter(person => person.username !== foundUser.username);
@@ -40,7 +47,7 @@ const handleLogin = async (req, res) => {
       JSON.stringify(usersDB.users)
     );
     //http cookie not accesible by js (for security. More secure than localstorage or another cookie)
-    res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: "None", secure: true, maxAge: 24 * 60 * 60 * 1000})
+    res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: "None", secure: true, maxAge: 24 * 60 * 60 * 1000 })
     res.json({ accessToken });
     // res.json({'success': `user ${user} is logged in`});
   } else {
